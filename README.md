@@ -36,7 +36,7 @@ There are 2 main object in package:
 
 ## Installation
 
-Install my-project with npm
+Install ExpressAuth with npm
 
 ```bash
   npm i @black_meteor/express-auth
