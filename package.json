@@ -1,6 +1,6 @@
 {
   "name": "@black_meteor/express-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auth package for express",
   "main": "index.js",
   "repository": {
