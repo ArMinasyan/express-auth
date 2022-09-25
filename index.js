@@ -39,7 +39,6 @@ class ExpressAuth {
 
   AuthGuard(request, response, next) {
     const info = ExpressAuth.#verify(request, response);
-    console.log(info)
     if (info.error) {
       response.status(400).send(info.message);
     } else {
@@ -50,7 +49,6 @@ class ExpressAuth {
         response.status(401).send('Unauthenticated');
       }
     }
-
   }
 
   RoleGuard(...roles) {
@@ -72,6 +70,10 @@ class ExpressAuth {
     let token;
     if (config.customExtractor) {
       token = config.customExtractor.call(this, request);
+      if(!token) token={
+          error: true,
+          message: 'JWT token is required'
+        }
     } else {
       token = ExtractToken(request, config.extractFrom);
     }
